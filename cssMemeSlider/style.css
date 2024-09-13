@@ -52,7 +52,6 @@ input {
 
 .nav-btn {
     cursor: pointer;
-    padding: 1em 0;
 
     transition: background 0.3s ease;
 }
@@ -73,7 +72,6 @@ input {
 .text-content {
     width: 70%;
     height: 10em;
-    margin-left: 3em;
 
     overflow: hidden;
 }
@@ -114,11 +112,12 @@ input {
     background-color: #c694e7;
 }
 
-@media(max-width: 630px) {
+@media(max-width: 665px) {
     .bottom-part {
         flex-direction: column;
         align-items: left;
         margin: 0 auto;
+        margin-top: 1em;
     }
 
     .text-content {
