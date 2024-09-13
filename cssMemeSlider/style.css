@@ -14,3 +14,89 @@ html {
     margin: 0 auto;
     padding: 0 40px;
 }
+
+.memes {
+    display: flex;
+    gap: 2em;
+    transition: transform 0.5s ease-in-out;
+}
+
+.mem {
+    min-width: 100%;
+}
+
+.mem img {
+    width: 610px;
+    height: 360px;
+}
+
+input {
+    display: none;
+}
+
+.bottom-part {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-part {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav-btn {
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+
+    transition: background 0.3s ease;
+}
+
+.nav-btn:hover .btn{
+    background-color: #fff;
+}
+
+.btn {
+    background-color: #ddd;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+
+    width: 1em;
+    height: 1em;
+}
+
+.text-part {
+    display: flex;
+}
+
+.mem-text {
+    min-width: 100%;
+}
+
+#mem1:checked ~ .memes, #mem1:checked ~ .bottom-part .text-part {
+    transform: translateX(0%);
+}
+
+#mem2:checked ~ .memes, #mem2:checked ~ .bottom-part .text-part {
+    transform: translateX(-100%);
+}
+
+#mem3:checked ~ .memes, #mem3:checked ~ .bottom-part .text-part {
+    transform: translateX(-200%);
+}
+
+#mem4:checked ~ .memes, #mem4:checked ~ .bottom-part .text-part {
+    transform: translateX(-300%);
+}
+
+input[type="radio"]#mem1:checked ~ .nav-part label[for="mem1"],
+input[type="radio"]#mem2:checked ~ .nav-part label[for="mem2"],
+input[type="radio"]#mem3:checked ~ .nav-part label[for="mem3"],
+input[type="radio"]#mem4:checked ~ .nav-part label[for="mem4"] {
+    background: #333;
+    width: 25px;
+    height: 25px;
+}
+
+
