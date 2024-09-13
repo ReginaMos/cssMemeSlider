@@ -13,18 +13,17 @@ html {
     max-width: 1280px;
     margin: 0 auto;
     overflow: hidden;
-
-    width: 100vw;
 }
 
 .memes {
     display: flex;
     transition: transform 0.5s ease-in-out;
+
+    margin-top: 2em;
 }
 
 .mem {
     min-width: 100%;
-    margin-bottom: 2em;
 }
 
 .mem img {
@@ -37,21 +36,23 @@ input {
     display: none;
 }
 
-/* .bottom-part {
+.bottom-part {
     display: flex;
     justify-content: space-between;
-} */
+    margin-top: 3em;
+}
 
 .nav-part {
     display: flex;
     justify-content: center;
     gap: 1em;
+    width: 30%;
+    pointer-events: auto;
 }
 
 .nav-btn {
     cursor: pointer;
-    width: 2em;
-    height: 2em;
+    padding: 1em 0;
 
     transition: background 0.3s ease;
 }
@@ -61,61 +62,71 @@ input {
 }
 
 .btn {
-    background-color: #ddd;
+    background-color: #5b6dcf;
     border-radius: 50%;
-    border: 0.1em solid #ddd;
+    border: 0.3em solid #5b6dcf;
 
-    width: 1em;
-    height: 1em;
+    width: 2em;
+    height: 2em;
 }
 
-/* .text-part {
-    flex: 1;
+.text-content {
+    width: 70%;
+    height: 10em;
+    margin-left: 3em;
+
+    overflow: hidden;
+}
+
+.text-part {
+    font-size: 2em;
+
     display: flex;
-    /* margin-right: 200px; 
-    justify-content: space-between;
-} */
+    width: 400%;
+    transition: transform 0.5s ease-in-out;
+}
 
 .mem-text {
-    min-width: 100vh;
-}
+    flex: 0 0 100%;
+    box-sizing: border-box;
+} 
 
-#mem1:checked ~ .memes, #mem1:checked ~ .text-part {
+#mem1:checked ~ .bottom-part .text-content .text-part, #mem1:checked ~ .memes {
     transform: translateX(0%);
 }
 
-#mem2:checked ~ .memes,  #mem2:checked ~ .text-part  {
+#mem2:checked ~ .bottom-part .text-content .text-part, #mem2:checked ~ .memes {
     transform: translateX(-100%);
 }
 
-#mem3:checked ~ .memes, #mem3:checked ~ .text-part {
+#mem3:checked ~ .bottom-part .text-content .text-part, #mem3:checked ~ .memes {
     transform: translateX(-200%);
 }
 
-#mem4:checked ~ .memes, #mem4:checked ~ .text-part {
+#mem4:checked ~ .bottom-part .text-content .text-part, #mem4:checked ~ .memes {
     transform: translateX(-300%);
 }
 
-
-/* #mem1:checked ~ .bottom-part .text-part .mem-text {
-    content: "Caption for Image 1";
+#mem1:checked ~ .bottom-part .nav-part label[for="mem1"] .btn,
+#mem2:checked ~  .bottom-part .nav-part label[for="mem2"] .btn,
+#mem3:checked ~ .bottom-part .nav-part label[for="mem3"] .btn,
+#mem4:checked ~ .bottom-part .nav-part label[for="mem4"] .btn {
+    background-color: #c694e7;
 }
 
-#mem2:checked ~ .bottom-part .text-part .mem-text {
-    content: "Caption for Image 2";
-}
+@media(max-width: 630px) {
+    .bottom-part {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
 
-#mem3:checked ~ .bottom-part .text-part .mem-text {
-    content: "Caption for Image 3";
-}
+    .text-content {
+        order: 2;
+        margin-left: 0em;
+    }
 
-#mem4:checked ~ .bottom-part .text-part .mem-text {
-    content: "Caption for Image 4";
-} */
-
-#mem1:checked ~ .nav-part label[for="mem1"] .btn,
-#mem2:checked ~  .nav-part label[for="mem2"] .btn,
-#mem3:checked ~ .nav-part label[for="mem3"] .btn,
-#mem4:checked ~ .nav-part label[for="mem4"] .btn {
-    background-color: #333;
+    .nav-part {
+        order: 1;
+    }
 }
