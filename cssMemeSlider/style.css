@@ -11,7 +11,7 @@ html {
 
 .container {
     max-width: 1280px;
-    margin: 0 auto;
+    margin: 0 2em;
     overflow: hidden;
 }
 
@@ -117,7 +117,7 @@ input {
 @media(max-width: 630px) {
     .bottom-part {
         flex-direction: column;
-        align-items: center;
+        align-items: left;
         margin: 0 auto;
     }
 
@@ -125,8 +125,9 @@ input {
         order: 2;
         margin-left: 0em;
     }
-
+    
     .nav-part {
         order: 1;
+        margin: 0 auto;
     }
 }
