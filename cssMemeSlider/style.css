@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
 }
 
@@ -12,37 +12,40 @@ html {
 .container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 40px;
+    overflow: hidden;
+
+    width: 100vw;
 }
 
 .memes {
     display: flex;
-    gap: 2em;
     transition: transform 0.5s ease-in-out;
 }
 
 .mem {
     min-width: 100%;
+    margin-bottom: 2em;
 }
 
 .mem img {
-    width: 610px;
-    height: 360px;
+    width: 100%;
+    height: 70vh;
+    object-fit: contain;
 }
 
 input {
     display: none;
 }
 
-.bottom-part {
+/* .bottom-part {
     display: flex;
     justify-content: space-between;
-}
+} */
 
 .nav-part {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 1em;
 }
 
 .nav-btn {
@@ -60,43 +63,59 @@ input {
 .btn {
     background-color: #ddd;
     border-radius: 50%;
-    border: 2px solid #ddd;
+    border: 0.1em solid #ddd;
 
     width: 1em;
     height: 1em;
 }
 
-.text-part {
+/* .text-part {
+    flex: 1;
     display: flex;
-}
+    /* margin-right: 200px; 
+    justify-content: space-between;
+} */
 
 .mem-text {
-    min-width: 100%;
+    min-width: 100vh;
 }
 
-#mem1:checked ~ .memes, #mem1:checked ~ .bottom-part .text-part {
+#mem1:checked ~ .memes, #mem1:checked ~ .text-part {
     transform: translateX(0%);
 }
 
-#mem2:checked ~ .memes, #mem2:checked ~ .bottom-part .text-part {
+#mem2:checked ~ .memes,  #mem2:checked ~ .text-part  {
     transform: translateX(-100%);
 }
 
-#mem3:checked ~ .memes, #mem3:checked ~ .bottom-part .text-part {
+#mem3:checked ~ .memes, #mem3:checked ~ .text-part {
     transform: translateX(-200%);
 }
 
-#mem4:checked ~ .memes, #mem4:checked ~ .bottom-part .text-part {
+#mem4:checked ~ .memes, #mem4:checked ~ .text-part {
     transform: translateX(-300%);
 }
 
-input[type="radio"]#mem1:checked ~ .nav-part label[for="mem1"],
-input[type="radio"]#mem2:checked ~ .nav-part label[for="mem2"],
-input[type="radio"]#mem3:checked ~ .nav-part label[for="mem3"],
-input[type="radio"]#mem4:checked ~ .nav-part label[for="mem4"] {
-    background: #333;
-    width: 25px;
-    height: 25px;
+
+/* #mem1:checked ~ .bottom-part .text-part .mem-text {
+    content: "Caption for Image 1";
 }
 
+#mem2:checked ~ .bottom-part .text-part .mem-text {
+    content: "Caption for Image 2";
+}
 
+#mem3:checked ~ .bottom-part .text-part .mem-text {
+    content: "Caption for Image 3";
+}
+
+#mem4:checked ~ .bottom-part .text-part .mem-text {
+    content: "Caption for Image 4";
+} */
+
+#mem1:checked ~ .nav-part label[for="mem1"] .btn,
+#mem2:checked ~  .nav-part label[for="mem2"] .btn,
+#mem3:checked ~ .nav-part label[for="mem3"] .btn,
+#mem4:checked ~ .nav-part label[for="mem4"] .btn {
+    background-color: #333;
+}
